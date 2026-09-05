@@ -1,0 +1,58 @@
+-- Suggested table name: Procurement
+
+Total Spend =
+SUM(Procurement[PO_Amount_INR])
+
+PO Count =
+DISTINCTCOUNT(Procurement[PO_Number])
+
+Average PO Value =
+DIVIDE([Total Spend], [PO Count])
+
+Closed POs =
+CALCULATE(
+    [PO Count],
+    Procurement[PO_Status] = "Closed"
+)
+
+On Time POs =
+CALCULATE(
+    [PO Count],
+    Procurement[Delivery_Status] = "On Time"
+)
+
+Late POs =
+CALCULATE(
+    [PO Count],
+    Procurement[Delivery_Status] = "Late"
+)
+
+On Time Delivery % =
+DIVIDE([On Time POs], [Closed POs])
+
+Vendor Spend Share % =
+DIVIDE(
+    [Total Spend],
+    CALCULATE([Total Spend], ALL(Procurement[Vendor_Name]))
+)
+
+Average Days Late =
+AVERAGE(Procurement[Days_Late])
+
+Top 3 Vendor Spend =
+SUMX(
+    TOPN(
+        3,
+        SUMMARIZE(
+            Procurement,
+            Procurement[Vendor_Name],
+            "VendorSpend", [Total Spend]
+        ),
+        [VendorSpend],
+        DESC
+    ),
+    [VendorSpend]
+)
+
+Top 3 Vendor Share % =
+DIVIDE([Top 3 Vendor Spend], [Total Spend])
