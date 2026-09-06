@@ -42,6 +42,17 @@ These were standardized before analysis. Blank actual-delivery dates for open pu
 4. Consider split-award sourcing for important categories when one vendor offers better pricing and another offers stronger delivery performance.
 5. Track vendor spend concentration to reduce dependency risk.
 
+## Screenshots
+<img width="1326" height="812" alt="WhatsApp Image 2026-09-06 at 2 00 09 AM" src="https://github.com/user-attachments/assets/cc6737b0-c0ea-47c4-a641-b5d69d47f41a" />
+
+
+<img width="1331" height="813" alt="WhatsApp Image 2026-09-06 at 2 00 30 AM" src="https://github.com/user-attachments/assets/6c64da90-e7f3-4730-bd19-bdea6951a061" />
+
+
+<img width="1320" height="802" alt="WhatsApp Image 2026-09-06 at 2 02 25 AM" src="https://github.com/user-attachments/assets/231e153f-61f0-4781-a212-7b2b29134c4a" />
+
+
+
 ## Repository Structure
 ```text
 data/
